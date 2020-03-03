@@ -1,0 +1,38 @@
+service: htmlToPdf
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+  stage: ${opt:stage, 'dev'}
+  environment:
+    S3_BUCKET: your-media-bucket-name
+
+functions:
+  htmlToPdf:
+    handler: handler.htmlToPdf
+    layers:
+      - ${cf:executables-layer-${self:provider.stage}.HtmlToPdfLayerExport}
+    events:
+      - http:
+          path: api/htmltopdf
+          method: get
+          cors: true
+          integration: lambda
+
+# serverless optimization
+package:
+  individually: true
+
+# serverless-webpack configuration
+# Enable auto-packing of external modules
+custom:
+  webpack:
+    webpackConfig: ../webpack.config.js
+    includeModules:
+      forceExclude:
+        - aws-sdk
+      packagePath: ../package.json
+
+plugins:
+  - serverless-webpack
+  - serverless-offline

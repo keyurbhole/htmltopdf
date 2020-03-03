@@ -1,0 +1,20 @@
+# ide editor
+.vscode
+
+# Logs
+logs
+*.log
+
+# test coverage
+coverage
+.nyc_output
+
+# Dependency directory
+node_modules/
+
+# OSX
+.DS_Store
+
+# App Packaged
+.webpack
+.serverless
