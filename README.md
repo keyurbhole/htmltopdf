@@ -101,7 +101,7 @@ let file = await exportHtmlToPdf(html)
 ### Template Engines
 To generate HTML with dynamic data there are some popular template engines like hbs, pug, Mustache, ejs, etc.<br />
 
-For list of template engines visit [Template Engines](https://github.com/expressjs/express/wiki#template-engines)
+For list of template engines visit [Template Engines](https://expressjs.com/en/resources/template-engines.html)
 
 
 ## More Fonts
