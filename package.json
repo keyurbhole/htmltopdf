@@ -6,7 +6,7 @@
   "license": "ISC",
   "dependencies": {
     "handlebars": "^4.7.3",
-    "html-pdf": "^2.2.0",
+    "html-pdf": "^3.0.1",
     "source-map-support": "^0.5.16"
   },
   "devDependencies": {
